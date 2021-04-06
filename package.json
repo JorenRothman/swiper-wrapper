@@ -1,0 +1,25 @@
+{
+    "name": "swiper-wrapper",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JorenRothman/swiper-wrapper.git"
+    },
+    "scripts": {
+        "start": "tsc --watch",
+        "build": "tsc -p .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Joren Rothman",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^4.2.3"
+    },
+    "dependencies": {
+        "swiper": "^6.5.0"
+    }
+}
