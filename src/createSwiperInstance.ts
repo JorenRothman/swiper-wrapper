@@ -45,7 +45,6 @@ function createSwiperInstance(
         observer = new IntersectionObserver(function (entries, observer) {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    console.log('Init my fukcing swiper');
                     instance.init();
                     observer.unobserve(element);
                 }
