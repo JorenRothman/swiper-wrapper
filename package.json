@@ -1,6 +1,6 @@
 {
     "name": "swiper-wrapper",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "dist/index.js",
     "types": "dist",
@@ -13,9 +13,13 @@
         "build": "tsc -p .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
+    "keywords": [
+        "swiper",
+        "lazy",
+        "initialization"
+    ],
     "author": "Joren Rothman",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "typescript": "^4.2.3"
     },
