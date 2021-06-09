@@ -1,6 +1,6 @@
 {
     "name": "swiper-wrapper",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "",
     "main": "dist/index.js",
     "types": "dist",
@@ -23,7 +23,7 @@
     "devDependencies": {
         "typescript": "^4.2.3"
     },
-    "dependencies": {
-        "swiper": "^6.5.0"
+    "peerDependencies": {
+        "swiper": "^6.0.0"
     }
 }
