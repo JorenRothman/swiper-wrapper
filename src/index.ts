@@ -1,6 +1,7 @@
-import Swiper, { SwiperOptions } from 'swiper';
+import Swiper, { SwiperOptions } from 'swiper/core';
 
 import createSwiperInstance from './createSwiperInstance';
+
 interface ISwiperWrapperOptions {
     swiper: Swiper;
     lazyInit: boolean;

@@ -1,5 +1,4 @@
-import Swiper from 'swiper/bundle';
-import { SwiperOptions } from 'swiper';
+import Swiper, { SwiperOptions } from 'swiper/core';
 
 function createSwiperInstance(
     element: HTMLElement | string,
@@ -24,9 +23,8 @@ function createSwiperInstance(
     let swiperContainer = element;
 
     if (!swiperContainer.classList.contains('swiper-container')) {
-        const potentialSwiperContainer = element.querySelector(
-            '.swiper-container'
-        );
+        const potentialSwiperContainer =
+            element.querySelector('.swiper-container');
 
         if (potentialSwiperContainer === null) {
             throw new Error(
