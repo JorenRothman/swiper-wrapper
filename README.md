@@ -10,21 +10,18 @@ npm install swiper-wrapper
 ## Usage
 First import swiper-wrapper
 ```js
-import swiperGlobalFactory from 'swiper-wrapper';
+import swiperWrapper from 'swiper-wrapper';
 ```
-
-Create a swiper factory instance
+P
+Create a swiper instance and set init to false
 ```js
-const factory = swiperGlobalFactory({
-    lazyInit: true,
+const swiper = new Swiper({
+    init: false,
+    ...more options
 })
 ```
 
-Use your new factory to create Swiper instances
+And then just wrap your instance with the wrapper
 ```js
-const swiper = factory('.my-selector', {
-    // all swiper options here baby
-}, {
-    // Intersection observer options
-});
+swiperWrapper(swiper, {})
 ```

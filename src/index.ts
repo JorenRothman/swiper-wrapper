@@ -1,29 +1,39 @@
-import Swiper, { SwiperOptions } from 'swiper/core';
+function swiperWrapper(
+    swiper: any,
+    options: IntersectionObserverInit | undefined
+) {
+    if (swiper instanceof Array) {
+        swiper.forEach((instance) => {
+            swiperWrapper(instance, options);
+        });
+    }
 
-import createSwiperInstance from './createSwiperInstance';
+    if (swiper.params === undefined) {
+        return;
+    }
 
-interface ISwiperWrapperOptions {
-    swiper: Swiper;
-    lazyInit: boolean;
-}
+    const element: Element = swiper.params.el;
 
-function swiperGlobalFactory(globalOptions: ISwiperWrapperOptions) {
-    return function (
-        element: HTMLElement | string,
-        options: SwiperOptions,
-        intersectionObserverOptions: IntersectionObserverInit = {
-            rootMargin: '200px',
-        }
-    ) {
-        return createSwiperInstance(
-            element,
-            {
-                ...options,
-                init: !globalOptions.lazyInit,
-            },
-            intersectionObserverOptions
-        );
+    if (element === undefined) {
+        return;
+    }
+
+    options = {
+        rootMargin: '200px',
+        ...options,
     };
+
+    const callback: IntersectionObserverCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                console.log(entry, 'init');
+                swiper.init();
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(element);
 }
 
-export default swiperGlobalFactory;
+export default swiperWrapper;
