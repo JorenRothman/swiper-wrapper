@@ -14,7 +14,7 @@ function swiperWrapper(
 
     const element: Element = swiper.params.el;
 
-    if (element === undefined) {
+    if (element === undefined || typeof element === 'string') {
         return;
     }
 
@@ -26,7 +26,6 @@ function swiperWrapper(
     const callback: IntersectionObserverCallback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log(entry, 'init');
                 swiper.init();
             }
         });
